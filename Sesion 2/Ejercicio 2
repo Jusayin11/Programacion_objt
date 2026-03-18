@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Ejercicio2 {
+    public static void main(String[] args) {
+        // Calcular y visualizar la longitud de la circunfe-rencia y el área de un
+        // círculo de radio dado.
+        double longitud, radio, area; // Variables
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escriba el valor del radio: ");
+        radio = sc.nextDouble();
+
+        /*
+         * Formulas
+         * Longitud = 2⋅π⋅r
+         * Area = π⋅r^2
+         */
+        longitud = 2 * Math.PI * radio;
+        area = Math.PI * Math.pow(radio, 2);
+
+        System.out.println("La longitud es: "+longitud);
+        System.out.println("El área es: "+area);
+
+
+        sc.close();
+    }
+}

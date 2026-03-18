@@ -1,0 +1,13 @@
+public class Celular {
+
+    String marca;
+    String modelo;
+    int bateria = 100;
+
+
+    public void llamar(String numero){
+        System.out.println("Lamar al " + numero + "..." + "La bateria esta en " + bateria);
+        this.bateria -= 5;
+    }
+    
+}

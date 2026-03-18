@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // Crear reservas
+        ReservaHotel r1 = new ReservaHotel("Juan Jose", "2026-07-11", "2026-07-25", 104);
+        ReservaHotel r2 = new ReservaHotel("Ana Gómez", "2026-05-01", "2026-05-05", 302);
+
+        // Crear reservas
+        r1.nuevaReserva();
+        r2.nuevaReserva();
+
+        // Consultar información
+        r1.consultarReserva();
+        r2.consultarReserva();
+
+        // Cancelar una reserva
+        r1.cancelarReserva();
+
+        // Intentar cancelar otra vez
+        r1.cancelarReserva();
+
+        // Estado final
+        r1.consultarReserva();
+    }
+}

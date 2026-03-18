@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Punto42 {
+    public static void main(String[] args) {
+
+        // variables siempre en minisculas
+        double distanciakm, preciototal;
+        int diasestadia;
+        //final double precioKM = 2.5; // se usa final porque el pecio no cambia
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el número de días: ");
+        diasestadia = sc.nextInt();
+
+        System.out.println("Ingrese la distancia en Km: ");
+        distanciakm = sc.nextDouble();
+
+        // Cálculo del precio ida y vuelta
+        preciototal = diasestadia * 2 * distanciakm;
+
+        /*
+         * si distancia > 800 km. y duración > 7 días
+         * precio total = (distancia * 2.5) – 30/100 * (precio total).
+         */
+
+        if (distanciakm > 800 && diasestadia > 7) {
+            preciototal = preciototal - (preciototal * 0.30);
+
+        }
+
+        System.out.println("El precio total del viaje es: " + preciototal);
+
+        sc.close();
+    }
+}

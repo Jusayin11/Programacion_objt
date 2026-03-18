@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // Crear objetos
+        Perfume perfume1 = new Perfume("212 VIP", "Carolina Herrera", 100, 350000);
+        Perfume perfume2 = new Perfume("Sauvage", "Dior", 80, 420000);
+
+        // Mostrar información inicial
+        perfume1.mostrarInfo();
+        perfume2.mostrarInfo();
+
+        // Aplicar perfume
+        perfume1.aplicarPerfume(10);
+        perfume1.aplicarPerfume(95); // Intento de usar más de lo disponible
+
+        // Consultar cantidad restante
+        System.out.println("Cantidad restante: " + perfume1.consultarCantidadRestante() + " ml");
+
+        // Ajustar precio
+        perfume1.ajustarPrecio(300000);
+
+        // Estado final
+        perfume1.mostrarInfo();
+    }
+}

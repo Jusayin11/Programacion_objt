@@ -1,0 +1,22 @@
+public class EjecutarCuenta {
+    public static void main(String[] args) {
+
+        CuentaBancaria cuenta1 = new CuentaBancaria("022325", "Julian Sayin", 1000);
+
+        cuenta1.mostrarInformacion();
+        cuenta1.depositar(500);
+        cuenta1.retirar(200);
+
+        System.out.println("Saldo disponible: " + cuenta1.consultarSaldo());
+
+        System.out.println();
+
+        CuentaBancaria cuenta2 = new CuentaBancaria("022326", "Juan Ocampo", 2500);
+
+        cuenta2.mostrarInformacion();
+        cuenta2.depositar(6000);
+        cuenta2.retirar(2500);
+
+        System.out.println("Saldo disponible: " + cuenta2.consultarSaldo());
+    }
+}

@@ -1,0 +1,11 @@
+public class EjecutarPersonaje {
+    public static void main(String[] args) {
+        
+        
+        Personaje p1 = new Personaje("Spiderman", 2);
+        p1.mostrarInfo();
+        
+        
+    }
+    
+}

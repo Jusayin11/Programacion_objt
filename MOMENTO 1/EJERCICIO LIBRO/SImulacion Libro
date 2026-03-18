@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // Crear objetos Libro
+        Libro libro1 = new Libro("Maze runner:Cura mortal", "James Dashner", "54223", 507);
+        Libro libro2 = new Libro("La Metamorfosis", "Franz Kafka", "84614", 56);
+
+        // Mostrar información inicial
+        libro1.mostrarInfo();
+        libro2.mostrarInfo();
+
+        // Simular préstamo
+        libro1.prestar();
+        libro1.prestar(); // Intentar prestar otra vez
+
+        // Verificar disponibilidad
+        System.out.println("¿Libro1 disponible? " + libro1.estaDisponible());
+
+        // Devolver libro
+        libro1.devolver();
+        libro1.devolver(); // Intentar devolver otra vez
+
+        // Estado final
+        libro1.mostrarInfo();
+    }
+}

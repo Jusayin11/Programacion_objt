@@ -1,0 +1,12 @@
+package Celular;
+public class Micelular {
+    public static void main(String[] args) {
+        
+        Celular miTelefono = new Celular();
+
+        miTelefono.marca = "Iphone";
+        miTelefono.llamar("3234734122");
+        
+    }
+    
+}

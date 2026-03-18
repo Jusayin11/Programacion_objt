@@ -1,0 +1,48 @@
+public class ReservaHotel {
+
+    // Atributos
+    private String nombreCliente;
+    private String fechaEntrada;
+    private String fechaSalida;
+    private int numeroHabitacion;
+    private boolean activa;
+
+    // Constructor
+    public ReservaHotel(String nombreCliente, String fechaEntrada, String fechaSalida, int numeroHabitacion) {
+        this.nombreCliente = nombreCliente;
+        this.fechaEntrada = fechaEntrada;
+        this.fechaSalida = fechaSalida;
+        this.numeroHabitacion = numeroHabitacion;
+        this.activa = false; // inicialmente no hay reserva activa
+    }
+
+    // Método para crear nueva reserva
+    public void nuevaReserva() {
+        if (!activa) {
+            activa = true;
+            System.out.println("Reserva creada para " + nombreCliente);
+        } else {
+            System.out.println("Ya existe una reserva activa.");
+        }
+    }
+
+    // Método para cancelar reserva
+    public void cancelarReserva() {
+        if (activa) {
+            activa = false;
+            System.out.println("Reserva cancelada para " + nombreCliente);
+        } else {
+            System.out.println("No hay reserva activa para cancelar.");
+        }
+    }
+
+    // Método para consultar información
+    public void consultarReserva() {
+        System.out.println("Cliente: " + nombreCliente);
+        System.out.println("Habitación: " + numeroHabitacion);
+        System.out.println("Fecha entrada: " + fechaEntrada);
+        System.out.println("Fecha salida: " + fechaSalida);
+        System.out.println("Estado: " + (activa ? "Activa" : "Cancelada"));
+        System.out.println("---------------------------");
+    }
+}

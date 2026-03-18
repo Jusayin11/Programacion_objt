@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Ejercicio1 {
+    public static void main(String[] args) {
+        /*
+         * Escribir un algoritmo que calcule la superficie de un
+         * triángulo en función de la base y la altura (S = 1/2 base × altura)
+         */
+
+        // variables
+        double altura, base, superficie;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Escriba la altura: ");
+        altura = sc.nextDouble();
+
+        System.out.println("Escriba la base: ");
+        base = sc.nextDouble();
+
+        superficie = (base * altura) / 2;
+
+        System.out.println("La superficie del tríangulo es; " + superficie);
+        sc.close();
+    }
+
+}

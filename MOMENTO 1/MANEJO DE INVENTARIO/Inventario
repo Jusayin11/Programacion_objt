@@ -1,0 +1,22 @@
+public class Inventario {
+    public static void main(String[] args) {
+
+        Producto objp1 = new Producto("Teclado", 10012, 10, 230.0);
+        // Mostrar el contenido del objeto objp1
+        System.out.println(objp1);
+        //Agreagar  5 teclados y mostrar nuevamente el objeto
+        objp1.agregarStock(5);
+        System.out.println(objp1);
+
+        //Descontar 8 teclados y mostrar el objeto
+        objp1.reducirStock(8);
+        System.out.println(objp1);
+
+        //calcular inventario
+        double total = objp1.calcularValorInventario();
+        //Ejemplo 1 de como mostrar el objp1
+        System.out.println("El precion total es:" + total);
+
+    }
+
+}

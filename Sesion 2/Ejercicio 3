@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Ejercicio3 {
+    public static void main(String[] args) {
+        /*
+         * Escribir un algoritmo que encuentre el salario semanal de un trabajador,
+         * dada la tarifa horaria y el número de horas trabajadas diariamente.
+         */
+        int tarifaHora, NumeroDeHoras, Salario;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escriba la tarifa horaria: ");
+        tarifaHora = sc.nextInt();
+
+        System.out.println("Escriba el número de horas: ");
+        NumeroDeHoras = sc.nextInt();
+
+        Salario = tarifaHora * NumeroDeHoras * 5;
+
+        System.out.println("El salario semanal es: " + Salario);
+
+
+        sc.close();
+
+    }
+}
