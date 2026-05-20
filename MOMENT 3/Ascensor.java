@@ -1,5 +1,4 @@
-package com.ascensor;
-
+package com.ascensor.model;
 
 public class Ascensor {
 
@@ -7,11 +6,15 @@ public class Ascensor {
 
     private String direccion;
 
+    private boolean moviendo;
+
     private PuertaAscensor puerta;
 
-    private List<BotonAscensor> botones;
+    // Arreglo simple
+    private int[] solicitudes;
 
-    private List<Integer> solicitudes;
+    // Contador de solicitudes
+    private int cantidadSolicitudes;
 
     public Ascensor(int totalPisos) {
 
@@ -19,35 +22,32 @@ public class Ascensor {
 
         this.direccion = "DETENIDO";
 
+        this.moviendo = false;
+
         this.puerta = new PuertaAscensor();
 
-        solicitudes = new ArrayList<>();
+        // Tamaño máximo de solicitudes
+        solicitudes = new int[20];
 
-        botones = new ArrayList<>();
-
-        for (int i = 1; i <= totalPisos; i++) {
-
-            botones.add(new BotonAscensor(i));
-        }
+        cantidadSolicitudes = 0;
     }
 
+    // Agregar solicitud
     public void agregarSolicitud(int piso) {
 
-        if (!solicitudes.contains(piso)) {
+        solicitudes[cantidadSolicitudes] = piso;
 
-            solicitudes.add(piso);
+        cantidadSolicitudes++;
 
-            System.out.println("Solicitud agregada al piso " + piso);
-        }
+        System.out.println("Solicitud agregada al piso " + piso);
     }
 
+    // Movimiento principal
     public void moverAscensor() {
 
-        Collections.sort(solicitudes);
+        for (int i = 0; i < cantidadSolicitudes; i++) {
 
-        while (!solicitudes.isEmpty()) {
-
-            int destino = solicitudes.get(0);
+            int destino = solicitudes[i];
 
             if (destino > pisoActual) {
 
@@ -59,13 +59,12 @@ public class Ascensor {
             }
 
             llegarAPiso(destino);
-
-            solicitudes.remove(0);
         }
 
         direccion = "DETENIDO";
     }
 
+    // Subir
     private void subir(int destino) {
 
         direccion = "SUBIENDO";
@@ -80,6 +79,7 @@ public class Ascensor {
         }
     }
 
+    // Bajar
     private void bajar(int destino) {
 
         direccion = "BAJANDO";
@@ -94,6 +94,7 @@ public class Ascensor {
         }
     }
 
+    // Llegada al piso
     private void llegarAPiso(int piso) {
 
         System.out.println("Llegó al piso " + piso);
@@ -105,6 +106,7 @@ public class Ascensor {
         puerta.cerrar();
     }
 
+    // Simular tiempo
     private void esperar() {
 
         try {
@@ -117,6 +119,7 @@ public class Ascensor {
         }
     }
 
+    // Getter
     public int getPisoActual() {
         return pisoActual;
     }
